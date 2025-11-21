@@ -36,4 +36,21 @@
   {% endfor %}
 </ul>
 
+<hr>
+
+<!-- 🔢 Pagination Controls -->
+<div>
+  {% if page_obj.has_previous %}
+      <a href="?page={{ page_obj.previous_page_number }}&q={{ query }}&category={{ selected_category }}">Previous</a>
+  {% endif %}
+
+  <span>Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+
+  {% if page_obj.has_next %}
+      <a href="?page={{ page_obj.next_page_number }}&q={{ query }}&category={{ selected_category }}">Next</a>
+  {% endif %}
+</div>
+
+<hr>
+
 <a href="{% url 'category_list' %}">View Categories</a>
