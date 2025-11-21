@@ -37,3 +37,17 @@ def product_list(request):
 
    if category_id:
         products = products.filter(category__id=category_id)
+
+    paginator = Paginator(products, 5)  # show 5 per page
+    page_number = request.GET.get("page")
+    page_obj = paginator.get_page(page_number)
+
+    context = {
+        "page_obj": page_obj,
+        "products": page_obj.object_list,
+        "categories": Category.objects.all(),
+        "selected_category": category_id,
+        "query": query,
+    }
+
+    return render(request, "products/product_list.html", context)
