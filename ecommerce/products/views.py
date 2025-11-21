@@ -31,3 +31,6 @@ def product_list(request):
     category_id = request.GET.get("category", "")
 
     products = Product.objects.all()
+
+ if query:
+        products = products.filter(name__icontains=query)
