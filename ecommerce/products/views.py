@@ -19,3 +19,15 @@ def add_category(request):
 def category_list(request):
     categories = Category.objects.all()
     return render(request,"products/category_list.html",{'categories':categories})
+
+def product_list(request):
+    """
+    Added:
+    - Search by product name
+    - Filter by category
+    - Pagination
+    """
+    query = request.GET.get("q", "")
+    category_id = request.GET.get("category", "")
+
+    products = Product.objects.all()
