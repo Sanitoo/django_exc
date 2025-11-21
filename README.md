@@ -4,4 +4,6 @@
 
 ## pip install psycopg2
 
-## 170284 - Abdulkadir Shamsudin
+## 152434 - Hassan Mohamud
+## 151389 - Stephanie Mallowa
+## 150342 - Karanei Chemisto
