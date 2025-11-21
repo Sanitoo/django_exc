@@ -1,5 +1,14 @@
 
 <h1>Products</h1>
+
+<form method="get" style="margin-bottom: 20px;">
+    <input 
+        type="text" 
+        name="q" 
+        placeholder="Search products..." 
+        value="{{ query }}" 
+    />
+
 <a href="{% url 'product_create' %}">Add New Product</a>
 
 <ul>
