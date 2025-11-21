@@ -1,0 +1,17 @@
+
+<h1>Products</h1>
+<a href="{% url 'product_create' %}">Add New Product</a>
+
+<ul>
+  {% for product in products %}
+    <li>
+      <strong>{{ product.name }}</strong> - ${{ product.price }}
+      <br>Category: {{ product.category.name }}
+      <br>
+    </li>
+  {% empty %}
+    <li>No products yet.</li>
+  {% endfor %}
+</ul>
+
+<a href="{% url 'category_list' %}">View Categories</a>
